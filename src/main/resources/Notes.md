@@ -2,6 +2,10 @@
 
 ---
 
+## Pre-requisites
+- install apache kafka
+- install kafka offset explorer
+
 ## KAFKA CLI - 101
 
 ### Steps:
