@@ -4,11 +4,16 @@
 
 ## Pre-requisites
 
-- install apache kafka (open source) or confluent kafka (commercial distribution)
+1. install apache kafka (open source) or confluent kafka (commercial distribution)
     - Important Dirs:
         - "E:\kafka\bin\windows"
         - "E:\kafka\config"
-- install kafka offset explorer
+2. install kafka offset explorer (visualiser)
+    - connect by creating a new cluster
+        - give cluster name
+        - enable zookeeper access
+        - provide zookeeper host and port
+3. install docker
 
 ## KAFKA CLI - 101
 
@@ -90,4 +95,15 @@ Get-Content E:\Coding\the-kafka-project\src\main\resources\csv\customers-10000.c
 
 ```shell
 .\bin\windows\kafka-console-consumer.bat --bootstrap-server localhost:9092 --topic my-1st-topic --from-beginning
+```
+
+## KAFKA using Docker
+
+```shell
+docker compose -f .\docker\docker-compose.yml up -d
+```
+
+- For using the bash inside the kafka container
+```shell
+docker exec -it kafka
 ```
