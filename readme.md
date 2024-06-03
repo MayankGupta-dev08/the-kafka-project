@@ -12,9 +12,7 @@
 
 ## KAFKA CLI - 101
 
-### Kafka Producer-Consumer Flow
-
-#### Steps:
+### Kafka Producer-Consumer Flow Steps:
 
 1. **Start Zookeeper**
     - The default port of zookeeper is **2181**
@@ -88,7 +86,7 @@ graph TD
 Get-Content E:\Coding\the-kafka-project\src\main\resources\csv\customers-10000.csv | .\bin\windows\kafka-console-producer.bat --broker-list localhost:9092 --topic my-1st-topic
 ```
 
-6. To start the consumer using CLI
+5. To start the consumer using CLI
 
 ```shell
 .\bin\windows\kafka-console-consumer.bat --bootstrap-server localhost:9092 --topic my-1st-topic --from-beginning
