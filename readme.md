@@ -105,5 +105,5 @@ docker compose -f .\docker\docker-compose.yml up -d
 
 - For using the bash inside the kafka container
 ```shell
-docker exec -it kafka
+docker exec -it <kafka_container_name> bash
 ```
