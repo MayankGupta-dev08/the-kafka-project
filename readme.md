@@ -36,7 +36,6 @@
 ```
 
 3. **Create a Topic**
-
     - The default port of kafka server/broker is **9092**
 
 ```shell
@@ -128,3 +127,9 @@ kafka-console-producer.sh --bootstrap-server localhost:9092 --topic my-1st-topic
 ```shell
 kafka-console-consumer.sh --bootstrap-server localhost:9092 --topic my-1st-topic --from-beginning
 ```
+
+---
+
+## Kafka + Spring Boot Application (Producer-Consumer Example)
+
+
