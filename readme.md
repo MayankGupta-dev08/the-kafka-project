@@ -15,6 +15,8 @@
         - provide zookeeper host and port
 3. install docker
 
+---
+
 ## KAFKA CLI - 101
 
 ### Kafka Producer-Consumer Flow Steps:
@@ -96,6 +98,8 @@ Get-Content E:\Coding\the-kafka-project\src\main\resources\csv\customers-10000.c
 ```shell
 .\bin\windows\kafka-console-consumer.bat --bootstrap-server localhost:9092 --topic my-1st-topic --from-beginning
 ```
+
+---
 
 ## KAFKA using Docker
 
