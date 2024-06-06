@@ -15,6 +15,8 @@
         - provide zookeeper host and port
 3. install docker
 
+---
+
 ## KAFKA CLI - 101
 
 ### Kafka Producer-Consumer Flow Steps:
@@ -34,7 +36,6 @@
 ```
 
 3. **Create a Topic**
-
     - The default port of kafka server/broker is **9092**
 
 ```shell
@@ -97,6 +98,8 @@ Get-Content E:\Coding\the-kafka-project\src\main\resources\csv\customers-10000.c
 .\bin\windows\kafka-console-consumer.bat --bootstrap-server localhost:9092 --topic my-1st-topic --from-beginning
 ```
 
+---
+
 ## KAFKA using Docker
 
 ```shell
@@ -107,3 +110,26 @@ docker compose -f .\docker\docker-compose.yml up -d
 ```shell
 docker exec -it <kafka_container_name> bash
 ```
+
+- navigate to the `bin` dir inside the kafka container --> /opt/kafka_version/bin/
+  
+- To create a kafka topic
+```shell
+kafka-topics.sh --zookeeper zookeeper:2181 --create --topic my-1st-topic --partitions 3 --replication-factor 1
+```
+
+- To start a kafka producer for a specific topic
+```shell
+kafka-console-producer.sh --bootstrap-server localhost:9092 --topic my-1st-topic
+```
+
+- To start a kafka consumer for a specific topic
+```shell
+kafka-console-consumer.sh --bootstrap-server localhost:9092 --topic my-1st-topic --from-beginning
+```
+
+---
+
+## Kafka + Spring Boot Application (Producer-Consumer Example)
+
+
