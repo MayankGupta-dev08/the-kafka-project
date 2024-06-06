@@ -23,7 +23,7 @@ public class EventController {
             for (int i = 1; i <= 10000; i++) {
                 publisher.sendMessageToTopic(message + " : " + i);
             }
-            return ResponseEntity.ok("message published successfully");
+            return ResponseEntity.ok("message published successfully...");
         } catch (Exception exception) {
             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR)
                     .build();

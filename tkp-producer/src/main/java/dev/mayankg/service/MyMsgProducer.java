@@ -25,9 +25,8 @@ public class MyMsgProducer {
             future.whenComplete((result, throwable) -> {
                 if (throwable == null) {
                     RecordMetadata recordMetadata = result.getRecordMetadata();
-                    System.out.println("Sent Msg: {" + message + "] @ partition=["
-                            + recordMetadata.partition() + "with offset="
-                            + recordMetadata.offset() + "]" + "}");
+                    System.out.println("Sent Msg=[" + message + "] @ partition=["
+                            + recordMetadata.partition() + "] with offset=[" + recordMetadata.offset() + "]");
                 } else {
                     System.err.println("Unable to send the message=["
                             + message + "] due to : " + throwable.getMessage());
