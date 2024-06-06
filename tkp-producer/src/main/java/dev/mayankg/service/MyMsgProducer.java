@@ -9,6 +9,9 @@ import org.springframework.stereotype.Service;
 
 import java.util.concurrent.CompletableFuture;
 
+/**
+ * Kafka Producer
+ */
 @Service
 @SuppressWarnings("unused")
 public class MyMsgProducer {
@@ -19,6 +22,9 @@ public class MyMsgProducer {
     @Value("${app.topic.name}")
     private String topicName;
 
+    /**
+     * Produces message
+     */
     public void sendMessageToTopic(String message) {
         try {
             CompletableFuture<SendResult<String, Object>> future = kafkaTemplate.send(topicName, message);

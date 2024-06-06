@@ -1,7 +1,8 @@
 server:
-  port: 9192
+  port: 9292
 
 spring:
   kafka:
     consumer:
-    bootstrap-server: localhost:9092
+      bootstrap-server: localhost:9092
+      group-id: tkp-group-1
