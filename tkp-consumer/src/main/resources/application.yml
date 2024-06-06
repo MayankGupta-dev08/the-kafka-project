@@ -1,0 +1,7 @@
+server:
+  port: 9192
+
+spring:
+  kafka:
+    consumer:
+    bootstrap-server: localhost:9092
