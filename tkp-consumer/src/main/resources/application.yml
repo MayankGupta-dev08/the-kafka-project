@@ -5,4 +5,11 @@ spring:
   kafka:
     consumer:
       bootstrap-server: localhost:9092
-      group-id: tkp-group-1
+      group-id: tkp-group-new
+      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      value-deserializer: org.springframework.kafka.support.serializer.JsonDeserializer
+      properties:
+        spring:
+          json:
+            trusted:
+              packages: dev.mayankg.dto

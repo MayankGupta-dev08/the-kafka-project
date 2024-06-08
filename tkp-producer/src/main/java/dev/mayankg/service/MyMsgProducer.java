@@ -1,5 +1,6 @@
 package dev.mayankg.service;
 
+import dev.mayankg.dto.Customer;
 import org.apache.kafka.clients.producer.RecordMetadata;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
@@ -24,6 +25,8 @@ public class MyMsgProducer {
 
     /**
      * Produces message
+     *
+     * @param message
      */
     public void sendMessageToTopic(String message) {
         try {
@@ -36,6 +39,29 @@ public class MyMsgProducer {
                 } else {
                     System.err.println("Unable to send the message=["
                             + message + "] due to : " + throwable.getMessage());
+                }
+            });
+        } catch (Exception exception) {
+            System.err.println(exception.getMessage());
+        }
+    }
+
+    /**
+     * Produces message
+     *
+     * @param customer
+     */
+    public void sendMessageToTopic(Customer customer) {
+        try {
+            CompletableFuture<SendResult<String, Object>> future = kafkaTemplate.send(topicName, customer);
+            future.whenComplete((result, throwable) -> {
+                if (throwable == null) {
+                    RecordMetadata recordMetadata = result.getRecordMetadata();
+                    System.out.println("Sent Msg=[" + customer.toString() + "] @ partition=["
+                            + recordMetadata.partition() + "] with offset=[" + recordMetadata.offset() + "]");
+                } else {
+                    System.err.println("Unable to send the message=["
+                            + customer.toString() + "] due to : " + throwable.getMessage());
                 }
             });
         } catch (Exception exception) {
