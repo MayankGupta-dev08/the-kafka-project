@@ -32,7 +32,10 @@ public class MyConsumerConfig {
 
     @Bean
     public ConsumerFactory<String, Object> consumerFactory() {
-        return new DefaultKafkaConsumerFactory<>(consumerConfig());
+        JsonDeserializer<Object> jsonDeserializer = new JsonDeserializer<>();
+        jsonDeserializer.addTrustedPackages("dev.mayankg.dto");
+
+        return new DefaultKafkaConsumerFactory<>(consumerConfig(), new StringDeserializer(), jsonDeserializer);
     }
 
     @Bean
