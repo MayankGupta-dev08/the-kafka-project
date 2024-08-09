@@ -1,39 +1,74 @@
-target/
-!.mvn/wrapper/maven-wrapper.jar
-!**/src/main/**/target/
-!**/src/test/**/target/
+# Maven build directory (Ignore all target directories)
+/target/
+**/target/
 
-### IntelliJ IDEA ###
-.idea/modules.xml
-.idea/jarRepositories.xml
-.idea/compiler.xml
-.idea/libraries/
-.idea/sonarlint/
-*.iws
+
+# Maven Wrapper
+/.mvn/wrapper/
+
+# Logs
+*.log
+
+# OS-specific files
+.DS_Store
+Thumbs.db
+
+# IDE specific files
+# IntelliJ IDEA
+.idea/
 *.iml
-*.ipr
+*.iws
 
-### Eclipse ###
-.apt_generated
-.classpath
-.factorypath
+# Eclipse
 .project
-.settings
-.springBeans
-.sts4-cache
+.classpath
+.settings/
 
-### NetBeans ###
-/nbproject/private/
-/nbbuild/
-/dist/
-/nbdist/
-/.nb-gradle/
+# NetBeans
+nbproject/
 build/
-!**/src/main/**/build/
-!**/src/test/**/build/
+nbbuild/
+dist/
+nbdist/
+private/
 
-### VS Code ###
+# VS Code
 .vscode/
 
-### Mac OS ###
-.DS_Store
+# Maven dependency cache
+/.m2/repository/
+
+# Dependency directories
+/node_modules/
+jspm_packages/
+
+# Java class files
+*.class
+
+# Compiled Python files
+*.pyc
+
+# JAR files
+*.jar
+*.war
+*.ear
+
+# Spring Boot specific
+spring-boot-application.log
+
+# Temporary files
+*.tmp
+*.swp
+*.swo
+*.sublime-workspace
+*.sublime-project
+
+# Other system files
+*.bak
+*.tmp
+*.swp
+*.swo
+*.DS_Store
+
+# Environment variables
+.env
