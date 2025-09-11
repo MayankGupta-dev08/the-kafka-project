@@ -17,11 +17,18 @@ import java.util.concurrent.CompletableFuture;
 @SuppressWarnings("unused")
 public class MyMsgProducer {
 
-    @Autowired
-    private KafkaTemplate<String, Object> kafkaTemplate;
+    /**
+     * Kafka template - used to produce message to topic, handles low level kafka operations
+     */
+    private final KafkaTemplate<String, Object> kafkaTemplate;
 
     @Value("${app.topic.name}")
     private String topicName;
+
+    @Autowired
+    public MyMsgProducer(KafkaTemplate<String, Object> kafkaTemplate) {
+        this.kafkaTemplate = kafkaTemplate;
+    }
 
     /**
      * Produces message
